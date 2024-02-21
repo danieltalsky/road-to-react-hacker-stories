@@ -22,12 +22,14 @@ const list = [
   }
 ]
 
-// NOW WORKING ON: React Fundamentals > Meet another React Component
+// NOW WORKING ON: React Fundamentals > React Component Instantiation
 
 function App() {
   return (
     <div>
       <h1>My Hacker Stories</h1>
+
+      <List /><List />
 
       <Search />
 
