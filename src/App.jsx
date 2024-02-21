@@ -22,30 +22,44 @@ const list = [
   }
 ]
 
-// NOW WORKING ON: React Fundamentals > Lists in React
+// NOW WORKING ON: React Fundamentals > Meet another React Component
 
 function App() {
   return (
     <div>
       <h1>My Hacker Stories</h1>
 
-      <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
+      <Search />
 
-      <ul>
-        {list.map(function (item) {
-          return (
-          <li key={item.objectID}>
-            <span><a href="{item.url}">{item.title}</a></span> / 
-            <span>{item.author}</span> / 
-            <span>Comments: {item.num_comments}</span> / 
-            <span>Points: {item.points}</span>
-          </li> 
-          );
-        })}
-      </ul>
+      <List />
     </div>
   )
+}
+
+function Search() {
+  return(
+    <div>
+      <label htmlFor="search">Search: </label>
+      <input id="search" type="text" />
+    </div>
+  );
+}
+
+function List() {
+  return(
+    <ul>
+    {list.map(function (item) {
+      return (
+      <li key={item.objectID}>
+        <span><a href="{item.url}">{item.title}</a></span> - 
+        <span> {item.author}</span> - 
+        <span> Comments: {item.num_comments}</span> - 
+        <span> Points: {item.points}</span>
+      </li> 
+      );
+    })}
+    </ul>  
+  );
 }
 
 export default App
