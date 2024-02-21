@@ -11,6 +11,9 @@ Currently, two official plugins are available:
 
 ## My dev log
 
+The course material:
+https://courses.robinwieruch.de/p/the-road-to-learn-react
+
 - I set up the new WSL 2 on windows
 - I installed the WSL VSCode extension
 - I installed Ubuntu 22.04.03 LTS WSL via Windows store
