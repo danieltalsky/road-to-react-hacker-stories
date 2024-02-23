@@ -22,7 +22,7 @@ const list = [
   }
 ]
 
-// NOW WORKING ON: React Fundamentals > React Component Instantiation
+// NOW WORKING ON: React Fundamentals > React DOM
 
 function App() {
   return (
