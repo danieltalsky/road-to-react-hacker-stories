@@ -3,28 +3,29 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-const list = [
-  {
-    title: 'A Bewk',
-    author: 'A Dewd',
-    url: 'https://bewk.com',
-    num_comments: 6,
-    points: 23,
-    objectID: 0,
-  },
-  {
-    title: 'Anotha Bewk',
-    author: 'El Doodalino',
-    url: 'https://bewk.com',
-    num_comments: 6,
-    points: 23,
-    objectID: 1,
-  }
-]
-
-// NOW WORKING ON: React Fundamentals > Handler Functions in JSX
+// NOW WORKING ON: React Fundamentals > React Props
 
 const App = () => {
+
+  const stories = [
+    {
+      title: 'A Bewk',
+      author: 'A Dewd',
+      url: 'https://bewk.com',
+      num_comments: 6,
+      points: 23,
+      objectID: 0,
+    },
+    {
+      title: 'Anotha Bewk',
+      author: 'El Doodalino',
+      url: 'https://bewk.com',
+      num_comments: 6,
+      points: 23,
+      objectID: 1,
+    }
+  ]
+
   return (
     <div>
       <h1>My Hacker Stories</h1>
@@ -33,7 +34,7 @@ const App = () => {
 
       <hr></hr>
 
-      <List />
+      <List list={stories} />
     </div>
   )
 }
@@ -63,9 +64,9 @@ const blurry = (event) => {
   );
 }
 
-const List = () => (
+const List = (props) => (
   <ul>
-    {list.map((item) => (
+    {props.list.map((item) => (
       <li key={item.objectID}>
         <span><a href="{item.url}">{item.title}</a></span> - 
         <span> {item.author}</span> - 
@@ -73,7 +74,7 @@ const List = () => (
         <span> Points: {item.points}</span>
       </li> 
     ))}
-  </ul>  
+  </ul>
 );
 
 export default App
