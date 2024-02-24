@@ -18,21 +18,20 @@ const list = [
     url: 'https://bewk.com',
     num_comments: 6,
     points: 23,
-    objectID: 0,
+    objectID: 1,
   }
 ]
 
-// NOW WORKING ON: React Fundamentals > React Component Declaration
-// aka: so many different ways to write functions
+// NOW WORKING ON: React Fundamentals > Handler Functions in JSX
 
 const App = () => {
   return (
     <div>
       <h1>My Hacker Stories</h1>
 
-      <List /><List />
-
       <Search />
+
+      <hr></hr>
 
       <List />
     </div>
@@ -43,24 +42,26 @@ const App = () => {
   example of using the simpler non-curly brace declaration syntax
   where the whole function is a return statement
 */
-const Search = () => (
+const Search = () => {
+
+  const handleChange = (event) => {
+    // synthetic event
+    console.log(event);
+    // value of target
+    console.log(event.target.value);
+  };
+  
+const blurry = (event) => {
+  console.log("blurrrrrrrrry")
+}
+
+  return (
     <div>
       <label htmlFor="search">Search: </label>
-      <input id="search" type="text" />
+      <input id="search" type="text" onBlur={blurry} onChange={handleChange} />
     </div>
-);
-
-/* 
-  example of using curly braces with a return statement
-*/
-const SearchWithReturn = () => {
-  return (
-  <div>
-    <label htmlFor="search">Search: </label>
-    <input id="search" type="text" />
-  </div>
-)}
-
+  );
+}
 
 const List = () => (
   <ul>
