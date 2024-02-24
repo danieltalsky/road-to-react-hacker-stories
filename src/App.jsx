@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import * as React from 'react'
 import './App.css'
 
 // NOW WORKING ON: React Fundamentals > React Props
@@ -45,21 +43,19 @@ const App = () => {
 */
 const Search = () => {
 
+  const [searchTerm, setSearchTerm] = React.useState('');
+
   const handleChange = (event) => {
-    // synthetic event
-    console.log(event);
-    // value of target
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
   
-const blurry = (event) => {
-  console.log("blurrrrrrrrry")
-}
-
   return (
     <div>
       <label htmlFor="search">Search: </label>
-      <input id="search" type="text" onBlur={blurry} onChange={handleChange} />
+      <input id="search" type="text" onChange={handleChange} />
+    
+      <p>Searching for <strong>{searchTerm}</strong></p>
+    
     </div>
   );
 }
