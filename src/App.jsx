@@ -1,7 +1,7 @@
 import * as React from 'react'
 import './App.css'
 
-// NOW WORKING ON: React Fundamentals > React Props
+// NOW WORKING ON: React Fundamentals > Callback Handlers
 
 const App = () => {
 
@@ -21,14 +21,26 @@ const App = () => {
       num_comments: 6,
       points: 23,
       objectID: 1,
+    },
+    {
+      title: 'Thord Bewk',
+      author: 'Mah Man',
+      url: 'https://thord.com',
+      num_comments: 23,
+      points: 1,
+      objectID: 2,
     }
   ]
+
+  const handleSearch = (event) => {
+    console.log(event.target.value);
+  };
 
   return (
     <div>
       <h1>My Hacker Stories</h1>
 
-      <Search />
+      <Search onSearch={handleSearch} />
 
       <hr></hr>
 
@@ -41,12 +53,14 @@ const App = () => {
   example of using the simpler non-curly brace declaration syntax
   where the whole function is a return statement
 */
-const Search = () => {
+const Search = (props) => {
 
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
+
+    props.onSearch(event);
   };
   
   return (
